@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Students Info parent">
+        <template if:true={students}>
+            <template for:each={students} for:item="student">
+                <c-student-child
+                    key={student.rollNumber}
+                    student={student}
+                    onstudentselect={handleStudentClick}>
+                </c-student-child>
+            </template>
+        </template>
+
+        <template if:true={selectedStudent}>
+            <div style="margin-top:20px; font-weight:bold;">
+                you've selected: <br />
+                <span><b>Name:</b>{selectedStudent.name}</span><br />
+                <span><b>Age:</b>{selectedStudent.age}</span><br />
+                <span><b>RollNumber:</b>{selectedStudent.rollNumber}</span>
+            </div>
+        </template>
+    </lightning-card>
+</template>

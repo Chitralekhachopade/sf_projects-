@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Conditional Rendering CMP">
+        <lightning-input type="checkbox" label="Click Me See The Magic" onchange={showDivHandler}></lightning-input>
+        <template if:true={displaydiv}>
+            <div>
+            
+            I Am Here...Click Again To Hide Me
+        </div>
+        </template>
+        <template if:false={displaydiv}>
+            <div>
+            Hello World
+        </div>
+        </template>
+        
+    </lightning-card>   
+</template>

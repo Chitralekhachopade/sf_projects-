@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Simple Calculator" icon-name="standard:formula">
+        <lightning-layout multiple-rows>
+            
+            <!-- First Number Input -->
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input 
+                    type="text" 
+                    label="firstNumber" 
+                    value={firstNumber} 
+                    onchange={inpChangehandeler} 
+                    placeholder="Enter first number">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <!-- Second Number Input -->
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input 
+                    type="text" 
+                    label="secondNumber" 
+                    value={secondNumber} 
+                    onchange={inpChangehandeler} 
+                    placeholder="Enter second number">
+                </lightning-input>
+            </lightning-layout-item>
+
+            <!-- Output and Buttons -->
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input 
+                    label={output} 
+                    value={result} 
+                    disabled>
+                </lightning-input>
+
+                <lightning-button-group class="slds-m-top_small">
+                <lightning-button class="slds-m-right_small" variant="success" label="Add" onclick={handleAdd}></lightning-button>
+                <lightning-button class="slds-m-right_small" variant="neutral" label="Subtract" onclick={handleSubtract}></lightning-button>
+                <lightning-button class="slds-m-right_small" variant="brand-outline" label="Multiply" onclick={handleMultiply}></lightning-button>
+                <lightning-button variant="destructive" label="Divide" onclick={handleDivide}></lightning-button>
+            </lightning-button-group>
+
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <template if:true={student}>
+        <div onclick={handleClick} style="cursor: pointer; padding:10px; background-color:#f6f6f6; margin:10px 0;">
+            <b>Students Info child</b>
+            <div>{student.name}</div>
+            <div>{student.age}</div>
+        </div>
+    </template>
+</template>

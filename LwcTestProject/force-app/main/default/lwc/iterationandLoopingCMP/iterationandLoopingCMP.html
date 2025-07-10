@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Iteration and Looping"> 
+        <lightning-input type="text" label="languages" onchange={changeHandler}></lightning-input>
+        <lightning-button variant="brand" label="Add" title="Primary action" onclick={handlerClick}></lightning-button>
+    <template for:each={languages} for:item="lang">
+        <div key={lang}>{lang}</div>
+    </template>
+    <h1>Example Of Iterator Directive</h1>
+    <template iterator:it={languages}>
+         <div key={it.value}>{it.value}</div>
+
+         <template if:true={it.first}>
+            First Element {it.value}   
+         </template>
+
+         <template if:true={it.last}>
+            Last Element {it.value}   
+         </template>
+        
+         
+    </template>
+    </lightning-card>
+</template>

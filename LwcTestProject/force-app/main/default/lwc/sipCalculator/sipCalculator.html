@@ -1,0 +1,31 @@
+<template>
+    <lightning-card class="custom-card" title="💰 SIP Calculator">
+        <lightning-layout multiple-rows>
+
+            <!-- Input Section -->
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-input label="Monthly Investment (₹)" type="number" value={monthlyInvestment} onchange={handleInput}></lightning-input>
+                <lightning-input label="Annual Interest Rate (%)" type="number" value={annualInterestRate} onchange={handleInput}></lightning-input>
+                <lightning-input label="Investment Duration (Years)" type="number" value={years} onchange={handleInput}></lightning-input>
+            </lightning-layout-item>
+
+            <!-- Calculate Button -->
+            <lightning-layout-item size="12" class="slds-m-top_medium">
+                <lightning-button variant="brand" label="Calculate SIP" onclick={calculateSIP}></lightning-button>
+            </lightning-layout-item>
+
+            <!-- Output Result with Styled Box -->
+            <template if:true={maturityAmount}>
+                <lightning-layout-item size="12" class="slds-m-top_medium result-box">
+                    <p class="tag">📈 SIP Growth</p>
+                    <p><strong>Total Invested:</strong> ₹ {totalInvested}</p>
+                    <p><strong>Maturity Amount:</strong> ₹ {maturityAmount}</p>
+                    <p><strong>Estimated Gain:</strong> ₹ {estimatedReturns}</p>
+                </lightning-layout-item>
+            </template>
+
+        </lightning-layout>
+    </lightning-card>
+    
+</template>
+
